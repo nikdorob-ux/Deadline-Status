@@ -3,7 +3,12 @@ const vscode = require('vscode');
 function activate(context) {
   const item = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
   const update = () => {
-    const deadline = new Date(vscode.workspace.getConfiguration('deadlineStatus').get('deadline'));
+    const value = vscode.workspace.getConfiguration('deadlineStatus').get('deadline');
+    if (!value) {
+      item.hide();
+      return;
+    }
+    const deadline = new Date(value);
     const seconds = Math.floor((deadline.getTime() - Date.now()) / 1000);
     if (Number.isNaN(deadline.getTime())) item.text = '$(warning) Set a valid deadline';
     else if (seconds <= 0) item.text = '$(alarm) Deadline passed';

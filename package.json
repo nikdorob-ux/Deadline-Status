@@ -14,7 +14,7 @@
       "properties": {
         "deadlineStatus.deadline": {
           "type": "string",
-          "default": "2026-12-01T23:59:00",
+          "default": "",
           "description": "Deadline date and time, for example 2026-12-01T23:59:00"
         }
       }

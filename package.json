@@ -1,0 +1,23 @@
+{
+  "name": "deadline-status",
+  "displayName": "Deadline Status",
+  "description": "Shows the time remaining until a project deadline in the status bar.",
+  "version": "0.0.1",
+  "publisher": "student-project",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Deadline Status",
+      "properties": {
+        "deadlineStatus.deadline": {
+          "type": "string",
+          "default": "2026-12-01T23:59:00",
+          "description": "Deadline date and time, for example 2026-12-01T23:59:00"
+        }
+      }
+    }
+  }
+}

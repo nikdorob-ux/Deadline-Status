@@ -30,6 +30,4 @@ function activate(context) {
   context.subscriptions.push(item, { dispose: () => clearInterval(timer) });
 }
 
-function deactivate() {}
 exports.activate = activate;
-exports.deactivate = deactivate;
